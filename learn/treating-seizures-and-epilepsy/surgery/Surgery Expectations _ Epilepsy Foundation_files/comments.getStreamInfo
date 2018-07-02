@@ -1,0 +1,10 @@
+gigya.callback({
+  "errorMessage": "Missing required parameter",
+  "errorDetails": "Missing required parameter : CategoryID",
+  "statusCode": 400,
+  "errorCode": 400002,
+  "statusReason": "Bad Request",
+  "callId": "4770363bbc5344c8bbbc0b21dfc761d8",
+  "time": "2018-07-02T16:05:59.163Z",
+  "context": "R1033307911"
+});

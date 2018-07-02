@@ -1,0 +1,39 @@
+jQuery(document).ready(function($) {
+
+   /* $("#mc-embedded-subscribe").click(function() {
+        setTimeout(function() { alert("success"); }, 3000);
+    });*/
+
+
+    $(document).on("click", ".btn-navbar", function() {
+    // jQuery(".btn-navbar").click(function() {
+        $(".mobile-menu-overlay").addClass("active");
+    });
+
+     $(document).on("click", ".mob-menu-top .logo-donate .glyphicon-remove-circle", function() {
+    // jQuery(".mob-menu-top .logo-donate .glyphicon-remove-circle").click(function() {
+        $(".mobile-menu-overlay").removeClass("active");
+    });
+
+     $(document).on("click", ".mobile-menu-overlay.active", function() {
+    // jQuery(".mobile-menu-overlay.active").click(function() {
+        $(".mob-menu-top .logo-donate .glyphicon-remove-circle").click();
+    });
+
+     $(window).bind("load", function() {
+console.log("test2");
+        //var mb = $('.gig-comments-count').text().substring(0, 2);
+        var mb = $('.gig-comments-count').text().replace(/\D/g, '');
+        console.log(mb);
+        if (mb !== null && mb !== undefined) {
+        $("#gigya-commend-count-custom").html("comments <span> " + mb + "</span>");
+        }
+
+    });
+
+$(window).load(function() {
+console.log("test");
+});
+
+
+});

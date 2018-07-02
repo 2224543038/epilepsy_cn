@@ -1,0 +1,55 @@
+jQuery(document).ready(function($) {
+
+   // var currentNid = Drupal.settings.custom_epilepsy.values.nid;
+    //alert(currentNid);
+
+// commend count changes start
+ //function printResponse(response) {
+ // jQuery=$.noConflict();
+  //  if (response.errorCode == 0) {                          
+  //          var msg = "comments" + response.comments.length; 
+  //          alert(msg);
+       /*       jQuery(".gigya-commend-count-custom").prepend(msg);                 
+    } 
+};
+ 
+var params = {
+    categoryID: "Category1",
+    streamID:currentNid,
+    callback: printResponse,
+    threadLimit: 3
+};
+ 
+gigya.comments.getComments(params);
+
+
+
+
+
+ Drupal.behaviors.custom_epilepsy = {};
+  
+  Drupal.behaviors.custom_epilepsy.attach = function(context, settings) {
+    var currentNid = Drupal.settings.custom_epilepsy.currentNid;
+    alert(currentNid);
+
+};
+*/
+
+
+
+    function loginOption() {
+        if (window.innerWidth < 768) {
+            console.log("tablet");
+            $(".page-user .divider img").after("<p>or</p>");
+        }
+    }
+
+    $(window).resize(function() {
+        loginOption();
+    });
+
+    $(window).load(function() {
+        $(".page-user .divider + .header,.page-user #block-system-main").wrapAll('<div class="form-wrapper">');
+        loginOption();
+    });
+});

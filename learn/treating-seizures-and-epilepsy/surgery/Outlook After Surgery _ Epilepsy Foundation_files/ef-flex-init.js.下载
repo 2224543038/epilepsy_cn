@@ -1,0 +1,176 @@
+(function($){
+    $(document).ready(function() {
+        var stopAfter = false;
+		var $staticClone = null;
+		var flexSelector = '.page-home .panels-flexible-region-homepage_default-column_2';
+
+		if ($('body').hasClass('page-home')) {
+			var mobile = false;
+			$(window).bind("resize.flex", function(e) {
+				if($('body').width() < 705){
+					if (mobile == true) return;
+					mobile = true;
+					$('body').addClass('mobile');
+
+					$staticClone = $(flexSelector).clone();
+					$(flexSelector)
+						.find('.panel-separator')
+							.remove()
+						.end()
+						.flexslider({
+							animation: "slide",
+							slideshow: true,
+							selector: ".panels-flexible-region-homepage_default-column_2-inside .panel-pane",
+							video: false,
+							controlNav: false,
+							directionNav: true,
+							animationLoop: false			
+						});
+				} else {
+					if (mobile == false) return;
+					mobile = false;
+					$('body').removeClass('mobile');
+					$(flexSelector)
+						.flexslider({
+							slideshow: false
+						});
+					$(flexSelector).replaceWith($staticClone);
+					
+				}
+			});
+            $(window).trigger("resize.flex");
+		}
+		$('.panels-flexible-region-homepage_default-column_2-inside .panel-separator').remove();
+		
+		
+		$('.flexslider')
+        .flexslider({
+            animation: "slide",
+            slideshow: true,
+            video: true,
+            controlNav: false,
+            before: function(e) {
+                stopAfter = false;
+                e.slides.find(".content").removeClass("hover");
+            },
+            after: function(e)  {
+                if (stopAfter) {
+                    return false;
+                }
+                var $media = $(e.slides).find(".slide-content .player-wrapper:visible");
+                var $slideContent = $media.parent(".slide-content");
+                var $videoContainer = $media.find(".video-container");
+                var $audioContainer = $media.find(".media-element");
+
+                // Reliably reset for audio plugin:
+                if($audioContainer.find("audio").length) {
+                    var html5_audio = $audioContainer.find("audio").get(0);
+
+                    if(html5_audio.pause) {html5_audio.pause();}
+                    if(html5_audio.currentTime) {html5_audio.currentTime = 0;}
+                }
+
+                var $audio_players = $audioContainer.children().clone();
+
+                $audioContainer.children().remove();
+                $audioContainer.append($audio_players);
+
+
+
+
+                // Reliably reset the video plugin:
+				$videoContainer.children().remove();
+                if ($videoContainer.data("youtube")) {
+                	var $youtube = $videoContainer.data("youtube").clone();
+                	$videoContainer.append($youtube);
+                }
+                $media
+                	.hide()
+                	.parent(".slide-content").removeClass("video-playing").removeClass("audio-playing");
+                var image =  $slideContent.find('img');
+				image.show();
+				
+                e.directionNav.removeClass("hover");
+            }
+        })
+        .find(".slide-content .video-container iframe")
+        	.each(function() {
+        		var src = $(this).attr('src');
+        		var $youtube = $('<iframe src="' + src + '" frameborder="0" allowfullscreen></iframe>');
+        		$(this).closest(".video-container").data("youtube", $youtube);
+        	})
+        	.end()
+
+        .find(".slide-content .play-button>a")
+        .css("display", "block")
+        .click(function(e) {
+
+            e.stopPropagation();
+
+            stopAfter = true;
+            var $a = $(this);
+
+            var $slideContent = $a.parents(".slide-content");
+            $a.parents(".flexslider").flexslider("pause");
+            var $media = $slideContent.find('.player-wrapper');
+
+            //autoplay for youtube
+            var src = $media.find('iframe').attr('src');
+            src = src+'&autoplay=1';
+            $media.find('iframe').attr('src', src);
+
+            if($media.find(".video-container").length) {
+                var image =  $slideContent.find('img');
+                $media.show().parent(".slide-content").addClass("video-playing");
+                image.hide();
+
+            } else {
+                $media.show().parent(".slide-content").addClass("audio-playing");
+
+                $media.find(".media-element").css({
+                    'position' : 'absolute',
+                    'left' : '50%',
+                    'top' : '50%',
+                    'margin-left' : -$media.find(".media-element").width()/2,
+                    'margin-top' : -$media.find(".media-element").height()/2
+                });
+            }
+            $slideContent.prepend($media);
+
+            //autoplay for mediaelement.js
+            var playbutton = $media.find('.mejs-playpause-button button');
+            playbutton.trigger('click');  
+
+            return false;
+        })
+        .end()
+        .find(".slide-content .content a").each(function(){
+            var $a = $(this);
+            var $content = $a.closest(".content");
+            $content
+            .hover(
+                function(){
+                    $(this).addClass("hover");
+                }, 
+                function(){
+                    $(this).removeClass("hover");
+                }
+                )
+            .click(function(){
+
+                if($("a", $(this)).attr('target') != '_blank') {
+                    location.href = $("a", $(this)).attr("href");
+                } else {
+                    window.open($("a", $(this)).attr("href"), '_blank');
+                }
+            });
+        })
+        .end()
+        .find(".flex-direction-nav>li>a")
+        .hover(function(){
+            $(this).addClass("hover");
+        }, function(){
+            $(this).removeClass("hover");
+        });
+    });
+}(jQuery));

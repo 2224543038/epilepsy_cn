@@ -1,0 +1,32 @@
+gigya.callback({
+  "streamInfo": {
+    "streamID": "2000084",
+    "status": "enabled",
+    "streamURL": "https://www.epilepsy.com/learn/treating-seizures-and-epilepsy/surgery/types-surgeries/corpus-callosotomy",
+    "streamTitle": "Corpus Callosotomy | Epilepsy Foundation",
+    "streamTags": [],
+    "categoryID": "category1",
+    "createDate": 1520053939652,
+    "commentCount": 2,
+    "approvedCommentCount": 2,
+    "threadCount": 2,
+    "ratingCount": 0,
+    "rssURL": "http://comments.US1.gigya.com/comments/rss/6281541/category1/2000084",
+    "lastCommentTimestamp": 1520054173905,
+    "isUserSubscribed": false,
+    "moderationMode": "inherit",
+    "moderationModes": {
+      "text": "inherit",
+      "image": "inherit",
+      "video": "inherit",
+      "url": "inherit",
+      "other": "inherit"
+    }
+  },
+  "statusCode": 200,
+  "errorCode": 0,
+  "statusReason": "OK",
+  "callId": "eb58752303c34c85abbedf008e5d1aab",
+  "time": "2018-07-02T16:10:44.210Z",
+  "context": "R291279401"
+});

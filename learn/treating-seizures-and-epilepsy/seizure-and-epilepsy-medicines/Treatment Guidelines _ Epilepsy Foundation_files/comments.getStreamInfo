@@ -1,0 +1,32 @@
+gigya.callback({
+  "streamInfo": {
+    "streamID": "2000099",
+    "status": "enabled",
+    "streamURL": "https://www.epilepsy.com/learn/treating-seizures-and-epilepsy/seizure-and-epilepsy-medicines/treatment-guidelines",
+    "streamTitle": "Treatment Guidelines | Epilepsy Foundation",
+    "streamTags": [],
+    "categoryID": "category1",
+    "createDate": 1521881608963,
+    "commentCount": 0,
+    "approvedCommentCount": 0,
+    "threadCount": 0,
+    "ratingCount": 0,
+    "rssURL": "http://comments.US1.gigya.com/comments/rss/6281541/category1/2000099",
+    "lastCommentTimestamp": 1521881608957,
+    "isUserSubscribed": false,
+    "moderationMode": "inherit",
+    "moderationModes": {
+      "text": "inherit",
+      "image": "inherit",
+      "video": "inherit",
+      "url": "inherit",
+      "other": "inherit"
+    }
+  },
+  "statusCode": 200,
+  "errorCode": 0,
+  "statusReason": "OK",
+  "callId": "89d54fba24d84889a76fff16e292a4ec",
+  "time": "2018-07-02T16:28:46.456Z",
+  "context": "R300325559"
+});

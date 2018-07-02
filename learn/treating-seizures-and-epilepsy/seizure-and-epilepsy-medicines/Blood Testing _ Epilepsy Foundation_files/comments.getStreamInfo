@@ -1,0 +1,32 @@
+gigya.callback({
+  "streamInfo": {
+    "streamID": "2000012",
+    "status": "enabled",
+    "streamURL": "http://www.epilepsy.com/learn/treating-seizures-and-epilepsy/seizure-and-epilepsy-medicines/blood-testing",
+    "streamTitle": "Blood Testing | Epilepsy Foundation",
+    "streamTags": [],
+    "categoryID": "category1",
+    "createDate": 1398984118159,
+    "commentCount": 4,
+    "approvedCommentCount": 4,
+    "threadCount": 3,
+    "ratingCount": 0,
+    "rssURL": "http://comments.US1.gigya.com/comments/rss/6281541/category1/2000012",
+    "lastCommentTimestamp": 1487286183695,
+    "isUserSubscribed": false,
+    "moderationMode": "inherit",
+    "moderationModes": {
+      "text": "inherit",
+      "image": "inherit",
+      "video": "inherit",
+      "url": "inherit",
+      "other": "inherit"
+    }
+  },
+  "statusCode": 200,
+  "errorCode": 0,
+  "statusReason": "OK",
+  "callId": "0735e15f0af240ac9e250f294c591451",
+  "time": "2018-07-02T16:28:07.499Z",
+  "context": "R3369890941"
+});

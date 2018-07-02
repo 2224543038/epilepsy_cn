@@ -1,0 +1,32 @@
+gigya.callback({
+  "streamInfo": {
+    "streamID": "2000095",
+    "status": "enabled",
+    "streamURL": "http://www.epilepsy.com/learn/treating-seizures-and-epilepsy/seizure-and-epilepsy-medicines/how-long-until-medicine-works",
+    "streamTitle": "How Long Until Medicine Works? | Epilepsy Foundation",
+    "streamTags": [],
+    "categoryID": "category1",
+    "createDate": 1473227000638,
+    "commentCount": 6,
+    "approvedCommentCount": 6,
+    "threadCount": 5,
+    "ratingCount": 0,
+    "rssURL": "http://comments.US1.gigya.com/comments/rss/6281541/category1/2000095",
+    "lastCommentTimestamp": 1521882751793,
+    "isUserSubscribed": false,
+    "moderationMode": "inherit",
+    "moderationModes": {
+      "text": "inherit",
+      "image": "inherit",
+      "video": "inherit",
+      "url": "inherit",
+      "other": "inherit"
+    }
+  },
+  "statusCode": 200,
+  "errorCode": 0,
+  "statusReason": "OK",
+  "callId": "f666772c859e43e2aef10638996be924",
+  "time": "2018-07-02T16:28:04.391Z",
+  "context": "R1603886363"
+});

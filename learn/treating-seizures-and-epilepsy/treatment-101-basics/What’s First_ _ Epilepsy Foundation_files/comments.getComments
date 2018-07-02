@@ -1,0 +1,10 @@
+gigya.callback({
+  "errorMessage": "Invalid parameter value",
+  "errorDetails": "Invalid argument: categoryID",
+  "statusCode": 400,
+  "errorCode": 400006,
+  "statusReason": "Bad Request",
+  "callId": "44caed515fc04857918b5f66f49cf4a7",
+  "time": "2018-07-02T16:19:52.048Z",
+  "context": "R2137684561"
+});
